@@ -23,19 +23,37 @@ return {
     },
   },
   keys = {
+    -- Finding
     {
-      "<leader>ff",
+      "<leader>fp",
+      function()
+        Snacks.picker.projects({
+        })
+      end,
+      desc = "Find Projects",
+    },
+    {
+      "<leader>fc",
+      function()
+        Snacks.picker.files({
+          cwd = vim.fn.stdpath("config")
+        })
+      end,
+      desc = "Find Config File",
+    },
+    {
+      "<leader>b",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Find Buffers",
+    },
+    {
+      "<leader><space>",
       function()
         Snacks.picker.files()
       end,
       desc = "Find Files",
-    },
-    {
-      "<leader>sh",
-      function()
-        Snacks.picker.help()
-      end,
-      desc = "Help Pages",
     },
     {
       "<leader>r",
@@ -44,6 +62,44 @@ return {
       end,
       desc = "Recent Files",
     },
+
+    -- Searching
+    {
+      "<leader>sh",
+      function()
+        Snacks.picker.help()
+      end,
+      desc = "Help Pages",
+    },
+    {
+      "<leader>sk",
+      function()
+        Snacks.picker.keymaps({
+          layout = "select",
+        })
+      end,
+      desc = "Search Keymaps",
+    },
+    {
+      "<leader>sj",
+      function()
+        Snacks.picker.jumps({
+          layout = "vertical",
+        })
+      end,
+      desc = "Search Jumps",
+    },
+    {
+      "<leader>sd",
+      function()
+        Snacks.picker.diagnostics({
+          layout = "vertical",
+        })
+      end,
+      desc = "Search Diagnostics",
+    },
+
+    -- Git
     {
       "<leader>gl",
       function()
@@ -63,23 +119,25 @@ return {
       desc = "Git Branches",
     },
     {
-      "<leader>sk",
+      "<leader>gs",
       function()
-        Snacks.picker.keymaps({
+        Snacks.picker.git_status({
           layout = "select",
         })
       end,
-      desc = "Search Keymaps",
+      desc = "Git Status",
     },
+
+    -- LSP
     {
-      "gd",
+      "ld",
       function()
         Snacks.picker.lsp_definitions()
       end,
       desc = "Goto Definitions",
     },
     {
-      "gr",
+      "lr",
       function()
         Snacks.picker.lsp_references({
           layout = "ivy",
@@ -88,7 +146,7 @@ return {
       desc = "Goto References",
     },
     {
-      "gi",
+      "li",
       function()
         Snacks.picker.lsp_implementations()
       end,
