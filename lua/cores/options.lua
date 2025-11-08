@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Basic
 opt.shell = "bash"
 opt.number = true
@@ -28,7 +31,6 @@ opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 opt.undofile = true
-opt.autoread = true
 opt.updatetime = 300
 opt.timeoutlen = 500
 
