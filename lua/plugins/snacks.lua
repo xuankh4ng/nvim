@@ -26,81 +26,26 @@ return {
   },
   keys = {
     -- Find
-    {
-      "<leader>fp",
-      function()
-        Snacks.picker.projects()
-      end,
-      desc = "Find projects",
-    },
-    {
-      "<leader><space>",
-      function()
-        Snacks.picker.files()
-      end,
-      desc = "Find files",
-    },
+    { "<leader><space>", function() Snacks.picker.files() end, desc = "Find files", },
+    { "<leader>fp", function() Snacks.picker.projects() end, desc = "Find projects", },
+    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
 
-    -- Searching
-    {
-      "<leader>sh",
-      function()
-        Snacks.picker.help()
-      end,
-      desc = "Search help",
-    },
-    {
-      "<leader>sk",
-      function()
-        Snacks.picker.keymaps({ layout = "select" })
-      end,
-      desc = "Search keymaps",
-    },
-    {
-      "<leader>sd",
-      function()
-        Snacks.picker.diagnostics({ layout = "vertical" })
-      end,
-      desc = "Search Diagnostics",
-    },
+    -- Search
+    { "<leader>sh", function() Snacks.picker.help() end, desc = "Search help", },
+    { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Search Highlight", },
+    { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps", },
+    { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Search Diagnostics", },
+    { "<leader>ql", function() Snacks.picker.qflist() end, desc = "Quickfix list", },
 
     -- Git
-    {
-      "<leader>lg",
-      function()
-        Snacks.lazygit()
-      end,
-      desc = "Open Lazygit",
-    },
-    {
-      "<leader>gb",
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = "Open Github browser",
-    },
+    { "<leader>lg", function() Snacks.lazygit() end, desc = "Open Lazygit", },
+    { "<leader>gb", function() Snacks.gitbrowse() end, desc = "Open Github browser", },
 
     -- LSP
-    {
-      "gy",
-      function()
-        Snacks.picker.lsp_type_definitions({ layout = "ivy" })
-      end,
-      desc = "Goto type definitions",
-    },
-    {
-      "gr",
-      function()
-        Snacks.picker.lsp_references({ layout = "ivy" })
-      end,
-      desc = "Goto references",
-    },
-    {
-      "gi",
-      function()
-        Snacks.picker.lsp_implementations({ layout = "ivy" })
-      end,
-      desc = "Goto implementations",
-    },
+    { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto definitions", },
+    { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto type definitions", },
+    { "gr", function() Snacks.picker.lsp_references() end, desc = "Goto references", },
+    { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto implementations", },
+    { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols", },
   },
 }

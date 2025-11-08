@@ -1,12 +1,5 @@
 return {
   {
-    "brenoprata10/nvim-highlight-colors",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      enable_tailwind = true,
-    }
-  },
-  {
     "saghen/blink.cmp",
     dependencies = { "rafamadriz/friendly-snippets" },
     event = { "InsertEnter" },
@@ -15,18 +8,16 @@ return {
       keymap = {
         preset = "none",
         ["<A-m>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<A-y>"] = { "accept" },
+        ["<A-n>"] = { "accept" },
 
         ["<Tab>"] = { "snippet_forward", "fallback", },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-        ["<Up>"] = { "select_prev", "fallback" },
         ["<Down>"] = { "select_next", "fallback" },
-        ["<A-p>"] = { "select_prev", "fallback_to_mappings" },
-        ["<A-n>"] = { "select_next", "fallback_to_mappings" },
+        ["<Up>"] = { "select_prev", "fallback" },
 
-        ["<A-P>"] = { "scroll_documentation_up", "fallback" },
-        ["<A-N>"] = { "scroll_documentation_down", "fallback" },
+        ["<A-U>"] = { "scroll_documentation_down", "fallback" },
+        ["<A-I>"] = { "scroll_documentation_up", "fallback" },
 
         ["<A-s>"] = { "show_signature", "hide_signature", "fallback" },
       },

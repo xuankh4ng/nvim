@@ -1,11 +1,11 @@
 return {
-	'nvim-treesitter/nvim-treesitter',
-	event = { 'BufReadPre', 'BufNewFile' },
-	build = ':TSUpdate',
-	branch = 'master',
+	"nvim-treesitter/nvim-treesitter",
+	event = { "BufReadPre", "BufNewFile" },
+	build = ":TSUpdate",
+	branch = "master",
 
 	config = function()
-		local treesitter = require('nvim-treesitter.configs')
+		local treesitter = require("nvim-treesitter.configs")
 
 		treesitter.setup({
 			highlight = { enable = true },
@@ -16,9 +16,10 @@ return {
 			},
 
 			ensure_installed = {
-				'lua',
-        'python',
-        'regex',
+				"lua",
+        "python",
+        "regex",
+        "markdown",
 			},
 
 			auto_install = true,

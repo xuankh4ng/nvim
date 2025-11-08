@@ -8,7 +8,7 @@ return {
       {
         "<leader>M",
         ":Mason<CR>",
-        desc = "[M]ason",
+        desc = "Mason",
       },
     },
 
@@ -18,7 +18,7 @@ return {
       "lua_ls",
 
       -- Python
-      "pyright",
+      "basedpyright",
 
       -- Web
       "html", "cssls", "ts_ls",
