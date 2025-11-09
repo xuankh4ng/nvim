@@ -8,16 +8,16 @@ return {
       keymap = {
         preset = "none",
         ["<A-m>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<A-n>"] = { "accept" },
+        ["<A-y>"] = { "accept" },
 
         ["<Tab>"] = { "snippet_forward", "fallback", },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<Up>"] = { "select_prev", "fallback" },
+        ["<A-n>"] = { "select_next", "fallback" },
+        ["<A-p>"] = { "select_prev", "fallback" },
 
-        ["<A-U>"] = { "scroll_documentation_down", "fallback" },
-        ["<A-I>"] = { "scroll_documentation_up", "fallback" },
+        ["<A-N>"] = { "scroll_documentation_down", "fallback" },
+        ["<A-P>"] = { "scroll_documentation_up", "fallback" },
 
         ["<A-s>"] = { "show_signature", "hide_signature", "fallback" },
       },
@@ -25,9 +25,21 @@ return {
         nerd_font_variant = "mono",
       },
       completion = {
-        documentation = { auto_show = true },
+        documentation = {
+          auto_show = true,
+          window = {
+            border = "solid",
+          },
+        },
         menu = {
+          border = "solid",
           draw = {
+            columns = {
+              { "kind_icon" },
+              { "label",      "label_description", gap = 2 },
+              { "kind" },
+              { "source_name" },
+            },
             components = {
               -- customize the drawing of kind icons
               kind_icon = {

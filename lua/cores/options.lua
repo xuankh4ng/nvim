@@ -24,7 +24,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
 opt.hlsearch = false
-opt.backspace = { "indent" , "eol", "start" }
+opt.backspace = { "indent", "eol", "start" }
 
 -- File Handing
 opt.swapfile = false
@@ -36,7 +36,7 @@ opt.timeoutlen = 500
 
 -- Visual
 opt.signcolumn = "yes"
-opt.winborder = "rounded"
+opt.winborder = "single"
 opt.termguicolors = true
 opt.showmode = false
 

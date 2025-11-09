@@ -1,26 +1,15 @@
 return {
   {
-    "neanias/everforest-nvim",
+    "sainnhe/everforest",
     lazy = false,
     priority = 1000,
-    enabled = true,
     config = function()
-      require("everforest").setup({
-        background = "hard",
-        transparent_background_level = 1,
-        ui_contrast = "high",
-      })
-      vim.cmd("colorscheme everforest")
-    end,
-  },
-  {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
-    enabled = false,
-    config = function()
-      require("nordic").load()
-      vim.cmd("colorscheme nordic")
-    end,
+      vim.g.everforest_background = "hard"
+      vim.g.disable_italic_comment = 1
+      vim.g.everforest_transparent_background = 0
+      vim.g.everforest_ui_contrast = "high"
+      vim.g.everforest_float_style = "bright"
+      vim.cmd.colorscheme("everforest")
+    end
   },
 }

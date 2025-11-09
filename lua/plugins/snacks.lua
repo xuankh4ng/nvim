@@ -19,6 +19,8 @@ return {
             ["K"] = { "preview_scroll_up", mode = { "i", "n" } },
             ["H"] = { "preview_scroll_left", mode = { "i", "n" } },
             ["L"] = { "preview_scroll_right", mode = { "i", "n" } },
+            ["<A-n>"] = { "list_down", mode = { "i", "n" } },
+            ["<A-p>"] = { "list_up", mode = { "i", "n" } },
           },
         },
       },
@@ -36,6 +38,7 @@ return {
     { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps", },
     { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Search Diagnostics", },
     { "<leader>ql", function() Snacks.picker.qflist() end, desc = "Quickfix list", },
+    { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
 
     -- Git
     { "<leader>lg", function() Snacks.lazygit() end, desc = "Open Lazygit", },
