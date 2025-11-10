@@ -21,7 +21,7 @@ return {
       "basedpyright",
 
       -- Web
-      "html", "cssls", "ts_ls",
+      "html", "cssls", "ts_ls", "tailwindcss",
       "intelephense", "laravel_ls",
     }),
 

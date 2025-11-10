@@ -15,10 +15,11 @@ map({ "n", "v" }, "<C-l>", "$", { desc = "Goto End of a line" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down a line in visual selection" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up a line in visual selection" })
 
-map("n", "<leader>J", "mzJ`z")
-map("v", "p", '"_dP')
-map({"n", "v"} , "Y", '"+y<CR>')
-map({"n", "v"} , "P", '"+p<CR>')
+map("n", "J", "mzJ`z")
+map({"n", "v"} , "<leader>y", "\"+y")
+map("n", "<leader>Y", "\"+Y")
+map({"n", "v"} , "<leader>p", "\"+p")
+map("n", "Q", "<nop>")
 
 -- Center cursor when:
 -- moving half screen
@@ -42,5 +43,3 @@ map("n", "L", "<cmd>tabn<cr>", { desc = "Prev tab" })
 
 -- Diagnostic & LSP
 map("n", "df", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
-map("n", "<leader>fm", vim.lsp.buf.format, { desc = "LSP format" })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
