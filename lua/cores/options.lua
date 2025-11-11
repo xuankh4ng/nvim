@@ -10,6 +10,8 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.wrap = false
 opt.scrolloff = 10
+opt.splitbelow = true
+opt.splitright = true
 
 -- Indentation
 opt.tabstop = 2
