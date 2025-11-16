@@ -1,8 +1,5 @@
 local map = vim.keymap.set
 
--- :norm
-map({ "n", "v" }, "<leader>n", ":norm ")
-
 -- TERMINAL MODE
 map("n", "<leader>t", "<cmd>te<cr>a", { desc = "Open Terminal" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "NORMAL MODE in Terminal" })
@@ -43,3 +40,4 @@ map("n", "L", "<cmd>tabn<cr>", { desc = "Prev tab" })
 
 -- Diagnostic & LSP
 map("n", "df", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

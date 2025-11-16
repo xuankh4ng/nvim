@@ -1,6 +1,6 @@
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
-  event = "VeryLazy",
+  event = "LspAttach",
   priority = 1000,
   config = function()
     require("tiny-inline-diagnostic").setup({
@@ -130,10 +130,14 @@ return {
       virtual_text = false, -- Disable Neovim's default virtual text diagnostics
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = "●",
-          [vim.diagnostic.severity.WARN] = "●",
-          [vim.diagnostic.severity.INFO] = "●",
-          [vim.diagnostic.severity.HINT] = "●",
+          -- [vim.diagnostic.severity.ERROR] = "●",
+          -- [vim.diagnostic.severity.WARN] = "●",
+          -- [vim.diagnostic.severity.INFO] = "●",
+          -- [vim.diagnostic.severity.HINT] = "●",
+          [vim.diagnostic.severity.ERROR] = " ",
+          [vim.diagnostic.severity.WARN] = " ",
+          [vim.diagnostic.severity.INFO] = "󰋼 ",
+          [vim.diagnostic.severity.HINT] = "󰠠 ",
         },
       },
     })

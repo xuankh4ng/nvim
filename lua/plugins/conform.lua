@@ -26,7 +26,7 @@ return {
       typescript = { "prettier", stop_after_first = true },
       javascriptreact = { "prettier", stop_after_first = true },
       typescriptreact = { "prettier", stop_after_first = true },
-      php = { "php-cs-fixer" },
+      php = { "php_cs_fixer" },
       blade = { "blade-formatter" },
     },
     -- Set default options

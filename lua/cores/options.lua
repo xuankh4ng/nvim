@@ -40,7 +40,7 @@ opt.timeoutlen = 500
 opt.signcolumn = "yes"
 opt.winborder = "single"
 opt.termguicolors = true
-opt.showmode = false
+opt.showmode = true
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {

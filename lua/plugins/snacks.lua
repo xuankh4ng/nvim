@@ -1,11 +1,10 @@
+---@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
   lazy = false,
   priority = 1000,
   opts = {
     bigfile = { enabled = true },
-    lazygit = { enabled = true },
-    gitbrowse = { enabled = true },
     picker = {
       layout = {
         cycle = false,
@@ -31,13 +30,14 @@ return {
     { "<leader><space>", function() Snacks.picker.files() end, desc = "Find files", },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Find projects", },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Find buffers", },
+    { "<leader>bd", function() Snacks.picker.bufdelete() end, desc = "Delete buffer", },
 
     -- Search
     { "<leader>sh", function() Snacks.picker.help() end, desc = "Search help", },
     { "<leader>sH", function() Snacks.picker.highlights() end, desc = "Search Highlight", },
     { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Search keymaps", },
     { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Search Diagnostics", },
-    { "<leader>ql", function() Snacks.picker.qflist() end, desc = "Quickfix list", },
     { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
 
     -- Git

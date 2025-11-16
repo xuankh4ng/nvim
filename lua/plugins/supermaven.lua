@@ -1,11 +1,12 @@
 return {
   "supermaven-inc/supermaven-nvim",
+  event = "InsertEnter",
   config = function()
     require("supermaven-nvim").setup({
       keymaps = {
         accept_suggestion = "<S-Tab>",
         clear_suggestion = "<A-c>",
-        accept_word = "<A-n>",
+        accept_word = "<A-,>",
       },
       -- ignore_filetypes = { cpp = true }, -- or { "cpp", }
       color = {

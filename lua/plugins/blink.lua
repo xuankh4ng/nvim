@@ -27,19 +27,9 @@ return {
       completion = {
         documentation = {
           auto_show = true,
-          window = {
-            border = "solid",
-          },
         },
         menu = {
-          border = "solid",
           draw = {
-            columns = {
-              { "kind_icon" },
-              { "label",      "label_description", gap = 2 },
-              { "kind" },
-              { "source_name" },
-            },
             components = {
               -- customize the drawing of kind icons
               kind_icon = {

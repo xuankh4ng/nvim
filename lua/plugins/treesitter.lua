@@ -20,6 +20,9 @@ return {
         "python",
         "regex",
         "markdown",
+        "blade",
+        "php",
+        "html",
 			},
 
 			auto_install = true,
