@@ -65,6 +65,13 @@ return {
         },
       },
       sources = {
+        providers = {
+          snippets = {
+            opts = {
+              friendly_snippets = true,
+            },
+          },
+        },
         default = { "lsp", "path", "snippets", "buffer" },
       },
       fuzzy = { implementation = "prefer_rust_with_warning" },

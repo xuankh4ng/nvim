@@ -5,6 +5,7 @@ return {
   priority = 1000,
   opts = {
     bigfile = { enabled = true },
+    explorer = { enabled = true },
     picker = {
       layout = {
         cycle = false,
@@ -32,6 +33,7 @@ return {
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Find buffers", },
     { "<leader>bd", function() Snacks.picker.bufdelete() end, desc = "Delete buffer", },
+    { "<leader>e", function() Snacks.picker.explorer() end, desc = "Explorer", },
 
     -- Search
     { "<leader>sh", function() Snacks.picker.help() end, desc = "Search help", },
