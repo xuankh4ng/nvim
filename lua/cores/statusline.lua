@@ -154,24 +154,10 @@ local function lsp_status_short()
 end
 _G.lsp_status_short = lsp_status_short
 
--- Filetype icon
-local function get_filetype_icon()
-  local filename = vim.fn.expand("%:t")
-  local extension = vim.fn.expand("%:e")
-
-  local icon = require("nvim-web-devicons").get_icon(filename, extension, { default = true })
-  if icon then
-    return icon
-  end
-
-  return ""
-end
-_G.get_filetype_icon = get_filetype_icon
 
 vim.opt.laststatus = 2
-vim.opt.statusline = "%{%v:lua.get_git()%}  "
-    .. "%{%v:lua.get_filetype_icon()%} "
-    .. "%t%m"
+vim.opt.statusline = "%{%v:lua.get_git()%}"
+    .. " %t %m"
     .. "%="
     .. "%{%v:lua.get_diagnostics()%}"
     .. "%{%v:lua.lsp_status_short()%}"
