@@ -18,11 +18,14 @@ return {
       "lua_ls",
 
       -- Python
-      "basedpyright", "djlsp",
+      "basedpyright",
 
       -- Web
       "html", "cssls", "ts_ls", "tailwindcss",
-      "laravel_ls", "phpactor",
+
+      -- PHP
+      "laravel_ls",
+      "intelephense",
     }),
 
     vim.lsp.config("lua_ls", {
