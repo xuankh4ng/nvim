@@ -10,11 +10,11 @@ return {
         ["<A-m>"] = { "show", "show_documentation", "hide_documentation" },
         ["<A-y>"] = { "accept" },
 
-        ["<Tab>"] = { "snippet_forward", "fallback", },
-        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+        ["<A-]>"] = { "snippet_forward", "fallback", },
+        ["<A-[>"] = { "snippet_backward", "fallback" },
 
-        ["<A-n>"] = { "select_next", "fallback" },
-        ["<A-p>"] = { "select_prev", "fallback" },
+        ["<A-n>"] = { "select_next", "fallback_to_mappings" },
+        ["<A-p>"] = { "select_prev", "fallback_to_mappings" },
 
         ["<A-N>"] = { "scroll_documentation_down", "fallback" },
         ["<A-P>"] = { "scroll_documentation_up", "fallback" },
@@ -65,13 +65,6 @@ return {
         },
       },
       sources = {
-        providers = {
-          snippets = {
-            opts = {
-              friendly_snippets = true,
-            },
-          },
-        },
         default = { "lsp", "path", "snippets", "buffer" },
       },
       fuzzy = { implementation = "prefer_rust_with_warning" },

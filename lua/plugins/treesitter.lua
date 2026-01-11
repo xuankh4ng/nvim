@@ -1,31 +1,40 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPre", "BufNewFile" },
-	build = ":TSUpdate",
-	branch = "master",
+  "nvim-treesitter/nvim-treesitter",
+  lazy = false,
+  build = ":TSUpdate",
+  branch = "master",
 
-	config = function()
-		local treesitter = require("nvim-treesitter.configs")
+  config = function()
+    local treesitter = require("nvim-treesitter.configs")
 
-		treesitter.setup({
-			highlight = { enable = true },
-			indent = { enable = true },
-			context_commentstring = {
-				enable = true,
-				enable_autocmd = false,
-			},
+    require("nvim-treesitter.install").prefer_git = true
+    treesitter.setup({
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+        -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+        disable = function(lang, buf)
+          local max_filesize = 100 * 1024 -- 100 KB
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+        end,
+      },
 
-			ensure_installed = {
-				"lua",
-        "python",
-        "regex",
-        "markdown",
-        "blade",
-        "php",
+      indent = {
+        enable = true,
+        disable = { "python", "blade" },
+      },
+
+      ensure_installed = {
+        "lua", "python",
+        "regex", "markdown", "markdown_inline",
+        "blade", "php", "phpdoc",
         "html",
-			},
+      },
 
-			auto_install = true,
-		})
-	end,
+      auto_install = true,
+    })
+  end,
 }

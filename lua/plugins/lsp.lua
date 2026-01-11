@@ -1,19 +1,21 @@
 return {
   {
     "mason-org/mason.nvim",
-    event = { "BufReadPre", "BufNewFile" },
     dependencies = { "neovim/nvim-lspconfig" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = {},
     keys = {
       {
         "<leader>M",
-        ":Mason<CR>",
+        "<CMD>Mason<CR>",
         desc = "Mason",
       },
     },
 
     -- LSP setups
     vim.lsp.enable({
+      -- C
+      "clangd",
       -- Lua
       "lua_ls",
 

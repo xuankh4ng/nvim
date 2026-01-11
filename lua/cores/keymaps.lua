@@ -1,12 +1,13 @@
 local map = vim.keymap.set
 
 -- TERMINAL MODE
-map("n", "<leader>t", "<cmd>te<cr>a", { desc = "Open Terminal" })
+map("n", "<leader>T", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 8)
+end, { desc = "Open a small terminal window" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "NORMAL MODE in Terminal" })
-
--- Go to Start and End of a line
-map({ "n", "v" }, "<C-h>", "^", { desc = "Goto Start of a line" })
-map({ "n", "v" }, "<C-l>", "$", { desc = "Goto End of a line" })
 
 -- Move lines in visual selection
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down a line in visual selection" })

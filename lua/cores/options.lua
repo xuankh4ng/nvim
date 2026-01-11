@@ -5,18 +5,19 @@ vim.g.maplocalleader = " "
 
 -- Basic
 opt.shell = "bash"
+opt.wrap = true
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
-opt.wrap = false
-opt.scrolloff = 10
 opt.splitbelow = true
 opt.splitright = true
+opt.confirm = true
+opt.scrolloff = 10 
 
 -- Indentation
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.autoindent = true
 opt.smartindent = true
 opt.expandtab = true
@@ -39,6 +40,7 @@ opt.timeoutlen = 500
 -- Visual
 opt.signcolumn = "yes"
 opt.winborder = "single"
+opt.background = "dark"
 opt.termguicolors = true
 opt.showmode = true
 

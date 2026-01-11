@@ -1,10 +1,9 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufWritePre" },
+  event = { "BufWritePre", "BufReadPre" },
   cmd = { "ConformInfo" },
   keys = {
     {
-      -- Customize or remove this keymap to your liking
       "<leader>fm",
       function()
         require("conform").format({ async = true })
@@ -19,15 +18,13 @@ return {
   opts = {
     -- Define your formatters
     formatters_by_ft = {
-      python = { "black" },
+      blade = { "blade-formatter" },
       html = { "prettier", stop_after_first = true },
       css = { "prettier", stop_after_first = true },
       javascript = { "prettier", stop_after_first = true },
       typescript = { "prettier", stop_after_first = true },
       javascriptreact = { "prettier", stop_after_first = true },
       typescriptreact = { "prettier", stop_after_first = true },
-      php = { "php_cs_fixer" },
-      blade = { "blade-formatter" },
     },
     -- Set default options
     default_format_opts = {
