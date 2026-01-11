@@ -9,10 +9,9 @@ opt.wrap = true
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
-opt.splitbelow = true
 opt.splitright = true
 opt.confirm = true
-opt.scrolloff = 10 
+opt.scrolloff = 10
 
 -- Indentation
 opt.tabstop = 4
@@ -34,15 +33,13 @@ opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 opt.undofile = true
-opt.updatetime = 300
-opt.timeoutlen = 500
 
 -- Visual
 opt.signcolumn = "yes"
 opt.winborder = "single"
 opt.background = "dark"
 opt.termguicolors = true
-opt.showmode = true
+opt.showmode = false
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {

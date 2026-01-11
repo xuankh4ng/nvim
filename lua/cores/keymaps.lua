@@ -1,12 +1,6 @@
 local map = vim.keymap.set
 
 -- TERMINAL MODE
-map("n", "<leader>T", function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 8)
-end, { desc = "Open a small terminal window" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "NORMAL MODE in Terminal" })
 
 -- Move lines in visual selection
@@ -15,7 +9,6 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up a line in visual selection" 
 
 map("n", "J", "mzJ`z")
 map({"n", "v"} , "<leader>y", "\"+y")
-map("n", "<leader>Y", "\"+Y")
 map({"n", "v"} , "<leader>p", "\"+p")
 map("n", "Q", "<nop>")
 
@@ -36,9 +29,5 @@ map("v", ">", ">gv")
 
 -- Tabs
 map("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "New tab" })
-map("n", "H", "<cmd>tabp<cr>", { desc = "Next tab" })
-map("n", "L", "<cmd>tabn<cr>", { desc = "Prev tab" })
-
--- Diagnostic & LSP
-map("n", "df", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+map("n", "<C-h>", "<cmd>tabp<cr>", { desc = "Next tab" })
+map("n", "<C-l>", "<cmd>tabn<cr>", { desc = "Prev tab" })
